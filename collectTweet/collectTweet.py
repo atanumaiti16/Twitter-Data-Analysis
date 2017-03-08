@@ -14,16 +14,13 @@ asecret = 'E5FiQAWDHiR4nSDvJnB4TGRUAOTDElfsUNkRov5laCobT'
 class listener(StreamListener):
     def on_data(self, data):
 
-        try:
-            # """to save data"""
+            print data
             saveFile = open('tweetPhase2DB.json', 'a')
+
             saveFile.write(data)
-            saveFile.close()
+            saveFile.close()   
             return True
 
-        except BaseException, e:
-            print 'failed ondata', str(e)
-            time.sleep(5)
 
     def on_error(self, status):
         print status
