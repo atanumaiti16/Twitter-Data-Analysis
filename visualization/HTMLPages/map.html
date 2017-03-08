@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+        html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        }
+        #map {
+        height: 100%;
+        }
+    </style>
+    <script type="text/javascript" src="jquery-1.12.1.min.js"></script>
+</head>
+<body>
+<div id="map"></div>
+<script>
+         jQuery.getJSON("map.json", function(points){
+        console.log(points)
+         var map = new google.maps.Map(document.getElementById('map'), {
+             zoom: 3,
+             center: {lat: -33.9, lng: 151.2}
+           });
+         
+         
+         for (var i = 0; i < points.length; i++) {
+             var point = points[i];
+             var marker = new google.maps.Marker({
+               position: {lat: point["lat"], lng: point["lng"]},
+               map: map
+             });
+           }
+         });
+      </script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0YeyIDUoCKrdVvp0M1zFQ4UvRL60iKGY"></script>
+</body>
+</html>

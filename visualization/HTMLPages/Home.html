@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Election-Home</title>
+    <script type="text/javascript">
+        function goToNewPage()
+        {
+            var url = document.getElementById('list').value;
+            if(url != 'none') {
+                window.location = url;
+            }
+        }
+    </script>
+</head>
+<body>
+<h1 align="center">
+
+    <div style="display:inline-block;vertical-align:bottom;">
+        <img src="source.gif" alt="Trump or Hillary?" height="320", width="320">
+    </div>
+    <span>
+    <div style="display:inline-block;">
+        <div>Elections 2016</div>
+        </div></span>
+    <div style="display:inline-block;vertical-align:bottom;">
+        <img src="first.jpeg" alt="US elections 2106"/>
+    </div>
+
+</h1>
+<br>
+<div align="center">
+    <select name="list" id="list" accesskey="target">
+        <option value='none' selected>Choose a query</option>
+        <option value="RDD1Mentions.html">Users talking about Hillary</option>
+        <option value="RDD1aMentionTrump.html">Users talking about Trump</option>
+        <option value="map.html">Locations of users participating in Elections-2016 discussion on Twitter</option>
+        <option value="barchart.html">Trending hashtags and their counts</option>
+        <option value="piechart.html">Media mostly used in the Elections 2016</option>
+    </select>
+    <input type=button value="Go" onclick="goToNewPage()" />
+</div>
+
+</body>
+</html>

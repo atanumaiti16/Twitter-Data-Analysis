@@ -1,0 +1,8 @@
+{"label":["VPDebate"],"value":3331}
+{"label":["MakeAmericaGreatAgain"],"value":1724}
+{"label":["Trump"],"value":497}
+{"label":["CrookedHillary"],"value":411}
+{"label":["FreeRicky"],"value":405}
+{"label":["HurricaneMatthew"],"value":379}
+{"label":["ThatMexicanThing"],"value":331}
+

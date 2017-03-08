@@ -1,0 +1,9 @@
+[
+{"text":["VPDebate"],"count":3331},
+{"text":["MakeAmericaGreatAgain"],"count":1724},
+{"text":["Trump"],"count":497},
+{"text":["CrookedHillary"],"count":411},
+{"text":["FreeRicky"],"count":405},
+{"text":["HurricaneMatthew"],"count":379},
+{"text":["ThatMexicanThing"],"count":331}
+]

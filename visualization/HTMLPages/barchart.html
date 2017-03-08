@@ -1,0 +1,85 @@
+<!-- <!DOCTYPE html> -->
+<meta charset="utf-8">
+<style>
+
+#chart svg {
+  height: 400px;
+}
+
+</style>
+<title>US Presidential Election</title>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script type="text/javascript" src="nv.d3.min.js"></script>
+<script type="text/javascript" src="jquery-1.12.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="chart.css">
+<link rel="stylesheet" type="text/css" href="nv.d3.min.css">
+<script>
+  
+      var data;
+        $.ajax({
+            url: "barchart.txt",
+            async: false,
+            success: function (data){
+
+    var lines = data.split('\n');
+    newStr = formatString(lines);
+     console.log(newStr);
+
+    var points = JSON.parse(newStr);
+        // jQuery.getJSON("sample_data.json", function(points){
+         data = [{
+           key: "Cumulative Return",
+           values: points
+        }];
+      
+
+nv.addGraph(function() {
+
+        var chart = nv.models.discreteBarChart()
+            .x(function(d) { 
+              return d.text 
+            })    //Specify the data accessors.
+            .y(function(d) { return d.count })
+          .staggerLabels(true)
+          .showValues(true)
+          ;
+          
+        d3.select('#chart svg')
+          .datum(data)
+          .transition().duration(500)
+          .call(chart);
+                    
+      nv.utils.windowResize(chart.update);
+        return chart;
+    })
+}
+})
+
+          
+
+function formatString(lines) {
+  this.newStr = " "
+        $.each(lines, function(i,v){
+            i = parseInt(i) + parseInt(1);
+            v = v.replace('[', '');
+            v = v.replace(']', '');
+        if (i == lines.length){
+            newStr = newStr + v;
+        }
+        else 
+            newStr = newStr + v + ",";
+
+    });
+
+        return "[" + newStr + "]"
+}
+
+
+
+</script>
+<body>
+    <div id="chart">
+  <svg></svg>
+</div>
+</body>
+</html>
